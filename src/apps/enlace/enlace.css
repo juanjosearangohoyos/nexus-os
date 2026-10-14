@@ -1,0 +1,528 @@
+.app--enlace {
+  background: radial-gradient(90% 50% at 100% 0%, rgba(59, 139, 255, 0.16), transparent 65%);
+}
+.enl-side__title {
+  font-size: 1.4rem;
+}
+.enl-side__lead {
+  color: var(--text-2);
+  font-size: 0.92rem;
+}
+.enl-nav {
+  display: grid;
+  gap: 2px;
+}
+.enl-nav button {
+  text-align: left;
+  padding: 8px 10px;
+  border-radius: 9px;
+  border: 0;
+  background: transparent;
+  color: var(--text-2);
+  font-weight: 560;
+}
+.enl-nav button:hover {
+  background: var(--surface-2);
+  color: var(--text);
+}
+.enl-hero h2 {
+  font-size: clamp(1.4rem, 2.5vw, 1.9rem);
+  margin-bottom: 12px;
+}
+.enl-h3 {
+  font-size: 1.2rem;
+  margin-bottom: 8px;
+}
+.enl-main section {
+  scroll-margin-top: 16px;
+}
+
+/* Tres inteligencias */
+.tri__layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 18px;
+  align-items: center;
+  padding: 14px;
+  border-radius: var(--r-lg);
+  background: rgba(0, 0, 0, 0.22);
+  border: 1px solid var(--stroke);
+}
+.tri__svg {
+  width: 100%;
+  max-width: 420px;
+}
+.tri__circle,
+.tri__center {
+  cursor: pointer;
+  transition: fill-opacity 0.25s, stroke-width 0.25s;
+  mix-blend-mode: screen;
+}
+.tri__circle:hover {
+  fill-opacity: 0.28;
+}
+.tri__circle:focus-visible,
+.tri__center:focus-visible {
+  outline: none;
+  stroke: #fff;
+  stroke-width: 3;
+}
+.tri__center {
+  animation: breathe2 3s ease-in-out infinite;
+  transform-origin: 180px 148px;
+}
+@keyframes breathe2 {
+  50% {
+    transform: scale(1.2);
+  }
+}
+.tri__label {
+  fill: #fff;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 15px;
+  pointer-events: none;
+}
+.tri__info {
+  display: grid;
+  gap: 8px;
+}
+.tri__def {
+  font-size: 1.05rem;
+  line-height: 1.55;
+}
+
+/* Metaanálisis */
+.meta {
+  border-radius: var(--r-lg);
+  overflow: hidden;
+  border: 1px solid rgba(158, 203, 255, 0.25);
+  background: linear-gradient(135deg, rgba(59, 139, 255, 0.14), rgba(12, 20, 42, 0.4));
+}
+.meta__head {
+  padding: 18px 20px 10px;
+}
+.meta__big {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 5vw, 3.4rem);
+  font-weight: 700;
+  line-height: 1;
+  background: linear-gradient(90deg, #9ecbff, #fff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.meta__sub {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 600;
+  margin-top: 6px;
+}
+.meta__body {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  gap: 18px;
+  padding: 10px 20px 20px;
+}
+.meta__chart {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 8px;
+}
+.meta__bar {
+  height: 40px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  padding: 0 12px;
+  font-size: 0.84rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+.meta__bar--h {
+  width: 52%;
+  background: rgba(255, 255, 255, 0.14);
+}
+.meta__bar--c {
+  width: 72%;
+  background: linear-gradient(90deg, #3b8bff, #6aa9ff);
+}
+.meta__bar--b {
+  width: 92%;
+  background: rgba(46, 230, 201, 0.35);
+}
+.meta__caption {
+  font-size: 0.74rem;
+  color: var(--text-3);
+}
+.meta__text {
+  display: grid;
+  gap: 8px;
+  justify-items: start;
+}
+.meta__text p {
+  color: var(--text-2);
+}
+.meta__tasks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.meta__task {
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+.meta__task--down {
+  background: rgba(255, 122, 107, 0.16);
+  color: #ffb4a8;
+}
+.meta__task--up {
+  background: rgba(46, 230, 201, 0.16);
+  color: #8ff5e0;
+}
+
+/* Diseño de equipo */
+.enl-design {
+  display: grid;
+  gap: 12px;
+}
+.enl-problem-note {
+  font-size: 0.88rem;
+  color: var(--text-2);
+}
+.assign {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 8px;
+}
+.assign__row {
+  display: grid;
+  grid-template-columns: 140px auto minmax(0, 1fr);
+  gap: 12px;
+  align-items: center;
+  padding: 10px 12px;
+  border-radius: 12px;
+  background: var(--surface);
+  border: 1px solid var(--stroke);
+  border-left: 4px solid var(--stroke-2);
+  transition: border-color 0.2s;
+}
+.assign__row.is-personas {
+  border-left-color: #2ee6c9;
+}
+.assign__row.is-ia {
+  border-left-color: #9b5cff;
+}
+.assign__row.is-equipo {
+  border-left-color: #ffb020;
+}
+.assign__task {
+  font-weight: 650;
+}
+.assign__zones {
+  display: flex;
+  gap: 4px;
+}
+.zone {
+  padding: 5px 11px;
+  border-radius: 8px;
+  border: 1px solid var(--stroke);
+  background: transparent;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--text-2);
+}
+.zone:hover {
+  background: var(--surface-2);
+}
+.zone--personas.is-on {
+  background: #14a892;
+  border-color: #2ee6c9;
+  color: #fff;
+}
+.zone--ia.is-on {
+  background: #7b45e6;
+  border-color: #b58cff;
+  color: #fff;
+}
+.zone--equipo.is-on {
+  background: #c97a00;
+  border-color: #ffb020;
+  color: #fff;
+}
+.assign__why {
+  font-size: 0.85rem;
+  color: var(--text-2);
+}
+
+.circuit {
+  margin: 0;
+  padding: 16px;
+  border-radius: var(--r-lg);
+  background: rgba(0, 0, 0, 0.25);
+  border: 1px solid var(--stroke);
+  display: grid;
+  gap: 12px;
+  animation: fadeUp 0.4s var(--ease) both;
+}
+.circuit__title {
+  font-family: var(--font-display);
+  font-weight: 650;
+  font-size: 1.05rem;
+}
+.circuit__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  position: relative;
+}
+.circuit__node {
+  padding: 12px;
+  border-radius: 14px;
+  border: 1.5px solid;
+  display: grid;
+  gap: 6px;
+  align-content: start;
+}
+.circuit__node ul {
+  margin: 0;
+  padding-left: 16px;
+  font-size: 0.86rem;
+  color: var(--text-2);
+}
+.circuit__node--personas {
+  border-color: #2ee6c9;
+  background: rgba(46, 230, 201, 0.08);
+}
+.circuit__node--ia {
+  border-color: #b58cff;
+  background: rgba(155, 92, 255, 0.1);
+}
+.circuit__node--equipo {
+  border-color: #ffb020;
+  background: rgba(255, 176, 32, 0.08);
+}
+.circuit__result {
+  grid-column: 1 / -1;
+  justify-self: center;
+  padding: 10px 20px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, rgba(46, 230, 201, 0.25), rgba(59, 139, 255, 0.25));
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  text-align: center;
+  display: grid;
+}
+.circuit__result .eyebrow {
+  margin: 0;
+}
+.circuit__result.is-risk {
+  background: rgba(255, 95, 87, 0.2);
+  border-color: rgba(255, 95, 87, 0.6);
+}
+.circuit__notes {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 6px;
+}
+.circuit__note {
+  padding: 8px 12px;
+  border-radius: 10px;
+  font-size: 0.88rem;
+}
+.circuit__note.is-risk {
+  background: rgba(255, 95, 87, 0.12);
+  color: #ffc1bc;
+}
+.circuit__note.is-ok {
+  background: rgba(46, 230, 201, 0.12);
+  color: #a8f7e7;
+}
+.circuit__note.is-note {
+  background: rgba(255, 176, 32, 0.1);
+  color: #ffd27a;
+}
+.proposal__grid {
+  margin-top: 10px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+.proposal__grid > div {
+  padding: 12px;
+  border-radius: 12px;
+  background: var(--surface);
+  border: 1px solid var(--stroke);
+}
+.proposal__grid p {
+  color: var(--text-2);
+  font-size: 0.88rem;
+  margin-top: 4px;
+}
+.proposal__end {
+  grid-column: 1 / -1;
+  display: flex;
+  gap: 8px;
+  align-items: baseline;
+  font-weight: 600;
+}
+
+@media (max-width: 900px) {
+  .tri__layout,
+  .meta__body,
+  .circuit__grid,
+  .proposal__grid {
+    grid-template-columns: 1fr;
+  }
+  .assign__row {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ===== Optimización: interacción principal y diagrama de nodos ===== */
+.enl-main > * {
+  max-width: none;
+}
+.enl-hero__lead {
+  font-size: 1.08rem;
+  color: var(--text-2);
+  max-width: 70ch;
+}
+.meta__head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 6px 18px;
+}
+.enl-design {
+  padding: 16px;
+  border-radius: var(--r-lg);
+  border: 1px solid rgba(158, 203, 255, 0.25);
+  background: rgba(59, 139, 255, 0.05);
+}
+.enl-design__head {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 12px;
+}
+.enl-design__grid {
+  display: grid;
+  gap: 14px;
+  align-items: start;
+}
+@container win (min-width: 1100px) {
+  .enl-design__grid {
+    grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
+  }
+  .enl-design__result {
+    position: sticky;
+    top: 0;
+  }
+  .assign__row {
+    grid-template-columns: 130px auto;
+  }
+  .assign__why {
+    grid-column: 1 / -1;
+  }
+}
+.enl-design__result {
+  display: grid;
+  gap: 12px;
+}
+.assign__why {
+  font-size: 0.92rem;
+}
+.assign__tools {
+  list-style: none;
+}
+.circuit--pending {
+  border-style: dashed;
+}
+.circuit__progress {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 6px;
+}
+.circuit__progress span {
+  height: 10px;
+  border-radius: 5px;
+  background: rgba(255, 255, 255, 0.12);
+}
+.circuit__progress .is-personas {
+  background: #2ee6c9;
+}
+.circuit__progress .is-ia {
+  background: #9b5cff;
+}
+.circuit__progress .is-equipo {
+  background: #ffb020;
+}
+.circuit__note {
+  font-size: 0.95rem;
+}
+
+/* Diagrama: tres nodos conectados */
+.tri__layout {
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+}
+.tri__svg {
+  max-width: 560px;
+}
+.tri__link {
+  stroke: rgba(255, 255, 255, 0.28);
+  stroke-width: 2;
+  stroke-dasharray: 6 6;
+}
+.tri__link-label {
+  fill: rgba(232, 241, 255, 0.78);
+  font-size: 13px;
+}
+.tri__node {
+  cursor: pointer;
+  outline: none;
+}
+.tri__node circle {
+  transition: stroke-width 0.2s;
+}
+.tri__node:hover circle,
+.tri__node:focus-visible circle {
+  stroke-width: 4;
+}
+.tri__node:focus-visible circle,
+.tri__node--rel:focus-visible rect {
+  stroke: #fff;
+}
+.tri__label {
+  font-size: 17px;
+}
+.tri__node--rel rect {
+  fill: rgba(255, 122, 107, 0.2);
+  stroke: #ff7a6b;
+  stroke-width: 1.5;
+}
+.tri__node--rel.is-on rect {
+  fill: rgba(255, 122, 107, 0.45);
+}
+.tri__node--rel text {
+  fill: #fff;
+  font-size: 13px;
+  font-weight: 700;
+}
+.tri__kicker {
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: #ffb4a8;
+}
+@container win (max-width: 820px) {
+  .tri__layout {
+    grid-template-columns: 1fr;
+  }
+}

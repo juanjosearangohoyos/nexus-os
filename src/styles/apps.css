@@ -1,0 +1,174 @@
+/* ===== Estructura común de aplicaciones ===== */
+/* Barra lateral y contenido con desplazamiento independiente, como en macOS. */
+.app {
+  grid-template-rows: minmax(0, 1fr);
+  display: grid;
+  grid-template-columns: 272px minmax(0, 1fr);
+  height: 100%;
+  min-height: 0;
+}
+.app__side {
+  border-right: 1px solid var(--stroke);
+  background: rgba(255, 255, 255, 0.025);
+  padding: 16px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  min-height: 0;
+  overflow: auto;
+}
+.app__main {
+  padding: 22px 28px 28px;
+  min-width: 0;
+  min-height: 0;
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+/* Sin ancho máximo de columna: se limita solo el largo de línea de los párrafos. */
+.app__main p,
+.card p {
+  max-width: 78ch;
+}
+/* En contenedores de altura fija, los bloques nunca se comprimen: se desplaza el contenedor. */
+.app__main > *,
+.app__side > *,
+.fin__main > *,
+.fin__side > *,
+.doc__index > *,
+.news__home > * {
+  flex-shrink: 0;
+}
+/* Listas en rejilla: la columna no crece con textos de una sola línea (se recortan con elipsis). */
+.msg-list,
+.doc__index ul,
+.caps__list,
+.assign,
+.collab {
+  grid-template-columns: minmax(0, 1fr);
+}
+/* Los contenedores con desplazamiento propio contienen sus elementos posicionados (p. ej. .sr-only). */
+.app__side,
+.app__main,
+.news,
+.news__article,
+.doc__index,
+.doc__scroll,
+.fin__side,
+.fin__main,
+.set {
+  position: relative;
+}
+
+.card {
+  padding: 16px 18px;
+  border-radius: var(--r-md);
+  background: var(--surface);
+  border: 1px solid var(--stroke);
+  display: grid;
+  gap: 10px;
+  justify-items: start;
+}
+.card p {
+  color: var(--text-2);
+  line-height: 1.6;
+}
+.quote {
+  margin: 0;
+  padding: 10px 14px;
+  border-left: 3px solid var(--accent);
+  background: color-mix(in srgb, var(--accent) 7%, transparent);
+  border-radius: 0 10px 10px 0;
+  color: var(--text);
+  line-height: 1.6;
+}
+
+.segmented {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  padding: 4px;
+  border-radius: 12px;
+  background: rgba(0, 0, 0, 0.25);
+  border: 1px solid var(--stroke);
+}
+.segmented button {
+  border: 0;
+  background: transparent;
+  padding: 7px 13px;
+  border-radius: 9px;
+  font-size: 0.86rem;
+  font-weight: 560;
+  color: var(--text-2);
+  transition: background 0.18s, color 0.18s;
+}
+.segmented button:hover {
+  color: var(--text);
+}
+.segmented button.is-on {
+  background: linear-gradient(180deg, color-mix(in srgb, var(--accent) 85%, white 15%), var(--accent));
+  color: #fff;
+  box-shadow: 0 4px 12px color-mix(in srgb, var(--accent) 35%, transparent);
+}
+
+.tabs {
+  display: flex;
+  gap: 4px;
+  border-bottom: 1px solid var(--stroke);
+}
+.tabs button {
+  border: 0;
+  background: transparent;
+  padding: 10px 14px;
+  font-weight: 600;
+  color: var(--text-3);
+  border-bottom: 2px solid transparent;
+  margin-bottom: -1px;
+}
+.tabs button[aria-selected='true'] {
+  color: var(--text);
+  border-bottom-color: var(--accent);
+}
+
+.pill-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+}
+.muted {
+  color: var(--text-3);
+  font-size: 0.92rem;
+}
+.callout {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  padding: 10px 14px;
+  border-radius: 10px;
+  background: rgba(255, 176, 32, 0.09);
+  border: 1px solid rgba(255, 176, 32, 0.3);
+  color: #ffd27a;
+  font-size: 0.88rem;
+}
+
+@media (max-width: 980px) {
+  .app {
+    grid-template-columns: 1fr;
+    height: auto;
+  }
+  .app__side {
+    border-right: 0;
+    border-bottom: 1px solid var(--stroke);
+    overflow: visible;
+  }
+  .app__main {
+    overflow: visible;
+  }
+}
+@media (max-width: 760px) {
+  .app__main {
+    padding: 16px;
+  }
+}

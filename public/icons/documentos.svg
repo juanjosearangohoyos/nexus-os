@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-labelledby="t">
+  <title id="t">Documentos</title>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#6E8BFF"/>
+      <stop offset="0.55" stop-color="#3A57F0"/>
+      <stop offset="1" stop-color="#1A2CA6"/>
+    </linearGradient>
+    <radialGradient id="sheen" cx="0.5" cy="0" r="0.9">
+      <stop offset="0" stop-color="#fff" stop-opacity="0.45"/>
+      <stop offset="0.55" stop-color="#fff" stop-opacity="0.05"/>
+      <stop offset="1" stop-color="#fff" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="paper" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#FFFFFF"/>
+      <stop offset="1" stop-color="#EEF1FA"/>
+    </linearGradient>
+    <radialGradient id="seal" cx="0.4" cy="0.35" r="0.75">
+      <stop offset="0" stop-color="#FFD97A"/>
+      <stop offset="0.6" stop-color="#F2A93B"/>
+      <stop offset="1" stop-color="#C47A12"/>
+    </radialGradient>
+    <filter id="sh" x="-20%" y="-20%" width="140%" height="150%">
+      <feDropShadow dx="0" dy="3" stdDeviation="3" flood-color="#0A1255" flood-opacity="0.45"/>
+    </filter>
+  </defs>
+  <rect x="6" y="6" width="116" height="116" rx="27" fill="url(#bg)"/>
+  <rect x="6" y="6" width="116" height="116" rx="27" fill="url(#sheen)"/>
+  <rect x="6.75" y="6.75" width="114.5" height="114.5" rx="26.3" fill="none" stroke="#fff" stroke-opacity="0.3" stroke-width="1.5"/>
+  <g filter="url(#sh)">
+    <path d="M34 22 h44 l18 18 v62 a6 6 0 0 1 -6 6 h-56 a6 6 0 0 1 -6 -6 v-74 a6 6 0 0 1 6 -6 z" fill="url(#paper)"/>
+    <path d="M78 22 v13 a5 5 0 0 0 5 5 h13 z" fill="#C8D2F2"/>
+  </g>
+  <rect x="38" y="36" width="30" height="5" rx="2.5" fill="#1A2CA6"/>
+  <rect x="38" y="48" width="48" height="3" rx="1.5" fill="#A7B2D6"/>
+  <rect x="38" y="55" width="48" height="3" rx="1.5" fill="#A7B2D6"/>
+  <rect x="38" y="62" width="40" height="3" rx="1.5" fill="#A7B2D6"/>
+  <rect x="38" y="69" width="44" height="3" rx="1.5" fill="#A7B2D6"/>
+  <path d="M38 92 c6 -10 9 6 14 -2 s7 -6 10 2" fill="none" stroke="#1A2CA6" stroke-width="2.4" stroke-linecap="round"/>
+  <g filter="url(#sh)">
+    <path d="M78 96 l-5 16 7 -4 5 6 3 -15 z" fill="#E0484F"/>
+    <path d="M90 96 l5 16 -7 -4 -5 6 -3 -15 z" fill="#B8323A"/>
+    <circle cx="84" cy="90" r="12" fill="url(#seal)"/>
+    <circle cx="84" cy="90" r="8" fill="none" stroke="#fff" stroke-opacity="0.75" stroke-width="1.4"/>
+    <path d="M80 90 l3 3 5 -6" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+</svg>

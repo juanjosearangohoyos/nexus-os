@@ -1,0 +1,18 @@
+node_modules/
+dist/
+*.log
+.DS_Store
+Thumbs.db
+
+# Archivos intermedios de la generación multimedia (se regeneran con npm run media:audio / media:video)
+tools/media/out/
+tools/media/__pycache__/
+
+# Documentos de referencia del curso: contienen materiales de terceros (manual APA, guía INTEF, rúbrica).
+# Decidan con la docente si se publican en un repositorio público antes de quitar esta línea.
+referencias/
+
+
+# Archivos locales de compilación y del entorno de desarrollo
+*.tsbuildinfo
+.claude/
